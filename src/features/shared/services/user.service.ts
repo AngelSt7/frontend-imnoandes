@@ -1,4 +1,4 @@
-import nest from "@/src/api/nest"
+import nest from "@/src/api/axios"
 import { UserUpdateEmail, UserUpdatePassword, UserUpdatePhone } from "@/src/features/user/interfaces"
 import { errorHttp } from "@/src/features/shared/utils"
 

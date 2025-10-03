@@ -1,4 +1,4 @@
-import nest from "@/src/api/nest";
+import nest from "@/src/api/axios";
 import { UseGetFilters } from "@/src/myLib/hooks/search/useGetFilters";
 import { findPropertySchema, propertiesListSchema, propertyDetailsSchema, propertyImagesSchema } from "@/src/features/property/admin/schemas/property.schema";
 

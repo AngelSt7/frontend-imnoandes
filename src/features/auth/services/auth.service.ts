@@ -1,4 +1,4 @@
-import nest from "@/src/api/nest";
+import nest from "@/src/api/axios";
 import { AuthCheckEmail, AuthCompleteAccount, AuthConfirmAccess, AuthCreateAccount, AuthLogin, AuthOtp, AuthRequestToken, AuthToken, RecoverPassword } from "@/src/features/auth/interfaces";
 import { errorHttp } from "@/src/features/shared/utils";
 

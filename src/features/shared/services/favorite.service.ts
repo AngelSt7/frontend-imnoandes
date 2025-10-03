@@ -1,4 +1,4 @@
-import nest from "@/src/api/nest";
+import nest from "@/src/api/axios";
 import { errorHttp } from "@/src/features/shared/utils";
 import { propertiesSearchSchema } from "@/src/features/property/public/schemas";
 import { AdminProperty } from "../../property/admin";

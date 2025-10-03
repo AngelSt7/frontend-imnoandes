@@ -1,7 +1,8 @@
 import { errorHttp, mapFormatUI } from "@/src/features/shared"
 import { locationsSearchSchema } from "../schemas"
 import { LocationsSearch, LocationSearch } from "../interfaces"
-import nest from "@/src/api/nest"
+import nest from "@/src/api/axios"
+import fetchSSR from "@/src/api/fetch"
 
 const ROUTES = {
     SEARCH: `location/search`,
@@ -17,7 +18,7 @@ export class Location {
         try {
 
             const url = `${base}/${ROUTES.SEARCH}?search=${search}`
-            const res = await fetch(url)
+            const res = await fetchSSR(url)
             if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`)
             const data = await res.json()
             const parsed = locationsSearchSchema.safeParse(data)
@@ -29,7 +30,7 @@ export class Location {
         try {
             if (!slugs || slugs.length === 0) return undefined;
             const url = `${base}/location?slugs=${slugs.join(",")}`;
-            const res = await fetch(url)
+            const res = await fetchSSR(url)
             if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`)
             const data = await res.json()
             const parsed = locationsSearchSchema.safeParse(data)

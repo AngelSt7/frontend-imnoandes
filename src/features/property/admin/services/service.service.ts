@@ -1,4 +1,4 @@
-import nest from "@/src/api/nest"
+import nest from "@/src/api/axios"
 import { errorHttp, mapFormatUI } from "@/src/features/shared/utils"
 
 const ROUTES = {
