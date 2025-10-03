@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "clean": "node -e \"require('fs').rmSync('.next', { recursive: true, force: true })\"",    "build": "npm run clean && cross-env NEXT_DEBUG=1 NODE_OPTIONS='--stack-trace-limit=50' next build",
+    "clean": "node -e \"require('fs').rmSync('.next', { recursive: true, force: true })\"",
+    "build": "npm run clean && cross-env NEXT_DEBUG=1 NODE_OPTIONS='--stack-trace-limit=50' next build",
     "start": "next start",
     "lint": "eslint"
   },
@@ -17,6 +18,7 @@
     "dayjs": "^1.11.18",
     "fast-deep-equal": "^2.0.1",
     "gsap": "^3.13.0",
+    "js-cookie": "^3.0.5",
     "leaflet": "^1.9.4",
     "leaflet-geosearch": "^4.2.2",
     "lucide-react": "^0.544.0",
