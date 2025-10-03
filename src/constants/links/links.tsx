@@ -23,7 +23,7 @@ export const LinksMenu: LinkOption[] = [
     icon: <Users className="w-4 h-4" />,
   },
   {
-    href: "/dashboard/favoritos",
+    href: "/dashboard/favoritos?page=1",
     label: "Favoritos",
     key: "favorites",
     icon: <BarChart3 className="w-4 h-4" />,
@@ -70,7 +70,7 @@ export const userLinks = [
   },
   {
     label: "Favoritos",
-    href: "/dashboard/favoritos",
+    href: "/dashboard/favoritos?page=1",
     icon: Heart,
     type: "link",
   },

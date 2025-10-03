@@ -64,7 +64,7 @@ export const useSearch = <T,>({
     search,
     setSearch,
     data: response?.data ?? [],
-    meta: response?.meta,
+    meta: response?.meta ?? undefined,
     isLoading
   };
 };

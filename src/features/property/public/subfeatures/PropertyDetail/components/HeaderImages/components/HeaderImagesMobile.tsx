@@ -2,15 +2,18 @@
 
 import Image from "next/image"
 import { PublicProperty } from '@/src/features/property/public/interfaces';
+import { QuantityImages } from "./HeaderImagesOverlay/QuantityImages";
 
 interface HeaderImagesMobileProps {
   mainImage: PublicProperty['images'][number]
   onImageClick: (image: PublicProperty['images'][number]) => void
+  quantity: number
 }
 
 export function HeaderImagesMobile({
   mainImage,
-  onImageClick
+  onImageClick,
+  quantity
 }: HeaderImagesMobileProps) {
   return (
     <div className="flex flex-col gap-2 md:hidden">
@@ -25,6 +28,7 @@ export function HeaderImagesMobile({
           priority
         />
         <figcaption className="sr-only">Imagen principal de la propiedad</figcaption>
+        <QuantityImages quantity={quantity} />
       </figure>
     </div>
   )

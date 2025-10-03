@@ -41,8 +41,6 @@ export function Search({ data, locales = [], tittle }: SearchProps) {
                 <div className='flex justify-center'><Pagination meta={data.meta} /> </div>
 
             </section>
-
-            <LoginModal />
         </>
     );
 }

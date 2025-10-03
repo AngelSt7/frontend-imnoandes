@@ -1,3 +1,4 @@
+'use client'
 import { LoginPage } from "@/src/features/auth/subfeatures/LoginOrquest";
 import { useAppStore } from "@/src/store/useAppStore";
 import { Modal, ModalContent, ModalHeader, ModalBody } from "@heroui/react";

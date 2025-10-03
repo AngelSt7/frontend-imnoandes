@@ -16,7 +16,7 @@ export async function generateMetadata() {
   })
 }
 
-export default async function Page({ searchParams }: { searchParams: { token: string } }) {
+export default async function Page({ searchParams }: { searchParams: Promise<{ token: string }> }) {
   try {
     const { token } = await searchParams
 

@@ -1,5 +1,4 @@
 'use client'
-import { LoginModal } from "@/src/features/property/public/subfeatures/LoginModal";
 import { useUser } from "@/src/features/user";
 import { useAppStore } from "@/src/store/useAppStore";
 import Link from "next/link";
@@ -46,7 +45,6 @@ export function FinalCTASection() {
           </div>
         </div>
       </section>
-      <LoginModal />
     </>
   )
 }

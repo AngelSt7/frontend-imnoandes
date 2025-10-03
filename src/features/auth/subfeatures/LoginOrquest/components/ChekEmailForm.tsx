@@ -37,7 +37,6 @@ export function CheckEmailForm({ setStatusForm }: CheckEmailFormProps) {
 
     const onSubmit = async (data: AuthCheckEmail) => mutate(data)
 
-
     return (
         <>
             <AuthInfoMessage message='Ingresa tu email para comenzar' />

@@ -3,7 +3,6 @@
 import dynamic from 'next/dynamic';
 import { CarrouselSkeleton } from '@/src/features/property/public/subfeatures/PropertyHome/Discover/components/CarrouselOrquest/components';
 import { CarrouselItem } from '@/src/features/property/public/interfaces';
-import { LoginModal } from '@/src/features/property/public/subfeatures/LoginModal';
 import { useFavorites } from '@/src/features/property/public/hooks';
 
 const PropertyCarrousel = dynamic(() => import('./PropertyCarrousel').then((m) => m.PropertyCarrousel), {
@@ -18,7 +17,6 @@ export function OrquestCarrousel({ data }: { data: CarrouselItem[] }) {
     return (
         <>
             <PropertyCarrousel data={data} isFavorite={isFavorite} toggleFavorite={toggleFavorite} />
-            <LoginModal />
         </>
     )
 }

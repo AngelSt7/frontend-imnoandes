@@ -14,7 +14,7 @@ export function ImageHeader() {
             <div className="flex-1 relative h-full">
                 <div className="absolute inset-0 bg-black/30 z-[5]" />
                 <Image
-                    src={'/Header.jpg'}
+                    src={'/header.jpg'}
                     fill
                     priority
                     alt="Imagen Bienes Raices"

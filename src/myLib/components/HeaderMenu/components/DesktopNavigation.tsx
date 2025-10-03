@@ -6,7 +6,6 @@ import { MenuPopover } from "@/src/myLib/components/MenuPopover";
 import { LinksMenu } from "@/src/constants";
 import { useUser } from "@/src/features/user";
 import { useAppStore } from "@/src/store/useAppStore";
-import { LoginModal } from "@/src/features/property/public/subfeatures/LoginModal";
 
 const transforms = `hover:scale-110 active:hover:scale-125 transition-transform`;
 
@@ -36,7 +35,6 @@ export function DesktopNavigation({ navLinks }: DesktopNavigationProps) {
         whitUser={false}
         onPress={() => onChangeLogin()}
       />
-      <LoginModal />
     </div>
   );
 }

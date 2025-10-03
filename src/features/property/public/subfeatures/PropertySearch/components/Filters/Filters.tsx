@@ -52,7 +52,7 @@ export function Filters({ show }: { show: AllowedFilters[] }) {
                     options={propertyTypes}
                     prefix=""
                     inProvider={inProvider}
-                    onChange={onChangeDrawer}
+                    {...(inProvider ? { onChange: onChangeDrawer } : {})}
                     tittle="Tipo de propiedad"
                 />
             )}
@@ -64,7 +64,7 @@ export function Filters({ show }: { show: AllowedFilters[] }) {
                     options={PropertyCategory}
                     prefix="-de-"
                     inProvider={inProvider}
-                    onChange={onChangeDrawer}
+                    {...(inProvider ? { onChange: onChangeDrawer } : {})}
                     tittle="Categoría"
                 />
             )}

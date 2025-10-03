@@ -7,7 +7,6 @@ import CardCarrousel from './components/CardCarrousel';
 import { CarrouselItem } from '@/src/features/property/public/interfaces';
 import { CarrouselSkeleton } from './components';
 import { useFavorites } from '@/src/features/property/public/hooks';
-import { LoginModal } from '@/src/features/property/public/subfeatures/LoginModal';
 
 const Carrousel = dynamic(() => import('./components/Carrousel').then((m) => m.Carrousel), { ssr: false, loading: () => (<CarrouselSkeleton />), });
 
@@ -54,8 +53,6 @@ export function CarrouselOrquest({ SALE, RENT }: CarrouselOrquestProps) {
             >
                 <Carrousel data={RENT} card={CardCarrousel} isFavorite={isFavorite} toggleFavorite={toggleFavorite} />
             </section>
-
-                        <LoginModal />
         </section>
     );
 }

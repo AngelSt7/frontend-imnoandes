@@ -37,16 +37,19 @@ export function HeaderImages({ images }: Props) {
         images={visibleGalleryImages}
         remainingCount={remainingCount}
         onImageClick={(img) => openOverlay(img.url)}
+        quantity={imagesArray.length}
       />
       <HeaderImagesTablet
         mainImage={mainImage}
         galleryImages={visibleGalleryImages}
         remainingCount={remainingCount}
         onImageClick={(img) => openOverlay(img.url)}
+        quantity={imagesArray.length}
       />
       <HeaderImagesMobile
         mainImage={mainImage}
         onImageClick={(img) => openOverlay(img.url)}
+        quantity={imagesArray.length}
       />
 
       {metaOverlay.show && currentImage && (

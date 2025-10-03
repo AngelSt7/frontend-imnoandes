@@ -4,7 +4,6 @@ import { useUser } from "@/src/features/user"
 import { CardAction } from "@/src/myLib/components"
 import { useAppStore } from "@/src/store/useAppStore"
 import { PlusCircle, Camera } from "lucide-react"
-import { LoginModal } from "@/src/features/property/public/subfeatures/LoginModal"
 
 export default function TabPostContent() {
   const onChangeLogin = useAppStore((state) => state.onChangeLogin);
@@ -43,7 +42,6 @@ export default function TabPostContent() {
         href="/es/guia-como-tomar-mejores-fotos"
       />
 
-      {requireLogin && <LoginModal />}
     </>
   )
 }

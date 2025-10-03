@@ -4,6 +4,7 @@ import { Footer, ImageHeader } from '@/src/components';
 import { cookies } from 'next/headers';
 import { UserProvider } from '@/src/features/user/contexts';
 import { UserInfo } from '@/src/features/user';
+import { LoginModal } from '@/src/features/property/public/subfeatures/LoginModal';
 
 export default async function layout({ children }: { children: React.ReactNode }) {
   const cookieStore = await cookies();
@@ -25,6 +26,7 @@ export default async function layout({ children }: { children: React.ReactNode }
         </main>
         <Footer />
       </UserProvider>
+      <LoginModal />
     </div>
   );
 }

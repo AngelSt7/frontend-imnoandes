@@ -12,8 +12,9 @@ export default function Page() {
   return (
     <section className="w-[98%] lg:w-[90%] max-w-[1600px] mx-auto space-y-6 mb-10 md:mt-5 mt-2">
       <div className="flex justify-between items-center">
-        <h2 className='text-h2 font-black'>Tus Favoritos</h2>
-        {Properties?.meta && <span className="text-sm text-zinc-500 font-medium">{Properties?.meta?.totalItems} propiedades</span>}
+        <h2 className='text-h2 font-black font-poppins'>Tus Favoritos</h2>
+        {(Properties && Properties?.data.length > 0) && (<span className="text-sm text-zinc-500 font-medium">
+          {Properties?.meta?.totalItems} propiedades</span>)}
       </div>
 
       {isLoading ? (
@@ -46,7 +47,7 @@ export default function Page() {
         </>
       )}
 
-      {Properties?.meta && (
+      {(Properties && Properties?.data.length > 0) && (
         <div className="flex justify-center">
           <Pagination meta={Properties?.meta} />
         </div>

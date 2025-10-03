@@ -2,23 +2,25 @@
 
 import Image from "next/image"
 import { PublicProperty } from '@/src/features/property/public/interfaces';
+import { QuantityImages } from "./HeaderImagesOverlay/QuantityImages";
 
 interface HeaderImagesTabletProps {
   mainImage: PublicProperty['images'][number]
   galleryImages: PublicProperty['images']
   remainingCount: number
   onImageClick: (image: PublicProperty['images'][number]) => void
+  quantity: number
 }
 
 export function HeaderImagesTablet({
   mainImage,
   galleryImages,
   remainingCount,
-  onImageClick
+  onImageClick,
+  quantity
 }: HeaderImagesTabletProps) {
   return (
     <div className="hidden md:flex lg:hidden md:gap-2 md:h-[350px]">
-      {/* Imagen principal */}
       <figure className="flex-[2] group cursor-pointer overflow-hidden rounded-lg relative">
         <Image
           src={mainImage.url}
@@ -30,9 +32,9 @@ export function HeaderImagesTablet({
           priority
         />
         <figcaption className="sr-only">Imagen principal de la propiedad</figcaption>
+        <QuantityImages quantity={quantity} />
       </figure>
 
-      {/* Galería lateral */}
       <div className="flex-1 flex flex-col gap-2">
         {galleryImages.slice(0, 3).map((image, index) => (
           <figure

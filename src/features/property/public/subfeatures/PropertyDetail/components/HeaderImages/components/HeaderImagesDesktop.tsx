@@ -1,10 +1,12 @@
 import Image from "next/image";
+import { QuantityImages } from "./HeaderImagesOverlay/QuantityImages";
 
 interface Props {
   mainImage: { url: string };
   images: { url: string }[];
   remainingCount: number;
   onImageClick: (img: any) => void;
+  quantity: number
 }
 
 export function HeaderImagesDesktop({
@@ -12,6 +14,7 @@ export function HeaderImagesDesktop({
   images,
   remainingCount,
   onImageClick,
+  quantity
 }: Props) {
   return (
     <div className="hidden lg:flex lg:gap-2 lg:h-[400px]">
@@ -27,6 +30,7 @@ export function HeaderImagesDesktop({
         <figcaption className="sr-only">
           Imagen principal de la propiedad
         </figcaption>
+        <QuantityImages quantity={quantity} />
       </figure>
 
       <div className="flex-1 grid grid-cols-2 gap-2">

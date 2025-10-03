@@ -9,6 +9,8 @@ export function Pagination({ meta, cursor }: { meta: Meta | undefined, cursor?: 
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
+  if(meta?.totalItems === 0) return null
+
   const handlePageChange = (page: number) => {
     const params = new URLSearchParams(searchParams);
     params.set("page", page.toString());
