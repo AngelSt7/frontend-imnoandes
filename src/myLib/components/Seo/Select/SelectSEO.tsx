@@ -1,0 +1,69 @@
+'use client';
+import { Checkbox, Button, Popover, PopoverTrigger, PopoverContent } from "@heroui/react";
+import { ButtonsToSEO } from "./components";
+import { useState } from "react";
+import { SEOProps } from "./interfaces";
+import { useSEOSelect } from "./hooks";
+
+export function SelectSEO({ regex, mode, joiner, options, prefix, inProvider, tittle, onChange }: SEOProps) {
+  const [open, setOpen] = useState(false);
+  const {
+    options: allOptions,
+    tempKeys,
+    applySelection,
+    toggleSelection,
+    getButtonLabel,
+  } = useSEOSelect({ mode, regex, joiner, options, prefix, onChange });
+
+  const buttonClasses = inProvider
+    ? "w-full flex justify-center"
+    : "w-full md:w-min-[200px] md:w-fit flex justify-center";
+
+  return (
+    <Popover
+      isOpen={open}
+      onOpenChange={setOpen}
+      showArrow
+      offset={10}
+      placement="bottom"
+    >
+      <PopoverTrigger>
+        <Button variant="flat" className={buttonClasses}>
+          {getButtonLabel()}
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent className="w-[280px]">
+        <div className="w-full">
+          <header className="px-3 py-2 border-b border-gray-200">
+            <h3 className="text-lg font-medium text-gray-900">{tittle}</h3>
+          </header>
+          <main className="p-2 space-y-1 max-h-64 overflow-y-auto scrollbar-thin scrollbar-thumb-teal-200 scrollbar-track-gray-100">
+            {allOptions.map((opt) => (
+              <Checkbox
+                key={opt.key}
+                color="success"
+                isSelected={tempKeys.has(opt.key)}
+                onValueChange={(isSelected) => toggleSelection(opt.key, isSelected)}
+                classNames={{
+                  base: "inline-flex w-full max-w-full bg-content1 m-0 p-2 rounded-md cursor-pointer hover:bg-teal-50 items-center justify-start data-[selected=true]:border-teal-500 data-[selected=true]:bg-teal-50",
+                  label: "w-full",
+                }}
+              >
+                <div className="flex items-center gap-2">
+                  <opt.icon className="w-4 h-4 text-gray-600" />
+                  <span className="text-sm font-medium text-gray-900">{opt.label}</span>
+                </div>
+              </Checkbox>
+            ))}
+          </main>
+
+          <ButtonsToSEO
+            onSubmit={() => {
+              applySelection();
+              setOpen(false);
+            }} />
+        </div>
+      </PopoverContent>
+    </Popover>
+  );
+}

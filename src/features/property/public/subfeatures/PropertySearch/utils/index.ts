@@ -1,0 +1,1 @@
+export { resolveTittle } from "./resolve-tittle";

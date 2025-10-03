@@ -1,0 +1,1 @@
+export { ErrorComponentsRegistry } from "./ErrorsRegister";

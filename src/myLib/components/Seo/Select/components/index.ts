@@ -1,0 +1,1 @@
+export { ButtonsToSEO } from "./ButtonsToSEO";

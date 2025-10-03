@@ -1,0 +1,1 @@
+export { User } from '@/src/features/shared/services/user.service';

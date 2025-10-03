@@ -1,0 +1,1 @@
+export { useImageMain } from "./useImageMain";

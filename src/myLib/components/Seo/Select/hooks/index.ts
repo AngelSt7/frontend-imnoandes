@@ -1,0 +1,1 @@
+export { useSEOSelect } from "./useSEOSelect";

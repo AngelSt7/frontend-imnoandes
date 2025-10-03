@@ -1,0 +1,5 @@
+export * from "./PropertyDetail"
+export * from "./PropertyHome"
+// export * from "./PropertySearch"
+export * from "./Contact"
+export * from "./FQA"

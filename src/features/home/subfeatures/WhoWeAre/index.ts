@@ -1,0 +1,1 @@
+export { WhoWeAre } from "./QuienesSomos";

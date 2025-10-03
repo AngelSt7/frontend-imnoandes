@@ -1,0 +1,1 @@
+export { customColors } from "./colors";

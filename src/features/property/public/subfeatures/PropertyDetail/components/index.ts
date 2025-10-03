@@ -1,0 +1,6 @@
+export * from "./Carrousel"
+export * from "./HeaderImages"
+export * from "./PropertyDetails"
+export * from "./PropertyDetails/components/Services"
+export * from "./PropertyDetails/components/PropertyDescription"
+export * from "./PropertyDetails/components/PropertyCharacteristics"
