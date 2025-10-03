@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "clean": "rimraf .next",
-    "build": "npm run clean && cross-env NEXT_DEBUG=1 NODE_OPTIONS='--stack-trace-limit=50' next build",
+    "clean": "node -e \"require('fs').rmSync('.next', { recursive: true, force: true })\"",    "build": "npm run clean && cross-env NEXT_DEBUG=1 NODE_OPTIONS='--stack-trace-limit=50' next build",
     "start": "next start",
     "lint": "eslint"
   },
