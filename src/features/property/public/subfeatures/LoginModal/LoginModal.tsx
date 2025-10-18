@@ -3,6 +3,7 @@ import { LoginPage } from "@/src/features/auth/subfeatures/LoginOrquest";
 import { useAppStore } from "@/src/store/useAppStore";
 import { Modal, ModalContent, ModalHeader, ModalBody } from "@heroui/react";
 import Image from "next/image";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export function LoginModal() {
   const { statusModalLogin, onChangeLogin } = useAppStore()
@@ -10,7 +11,7 @@ export function LoginModal() {
 
   return (
     <>
-      <Modal isOpen={statusModalLogin} onOpenChange={onChangeLogin}>
+      <Modal scrollBehavior="inside" isOpen={statusModalLogin} onOpenChange={onChangeLogin}>
         <ModalContent>
           {(onClose) => (
             <>
